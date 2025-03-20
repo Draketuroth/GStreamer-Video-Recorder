@@ -1,0 +1,74 @@
+# Ignore compiled binaries
+*.exe
+*.out
+*.app
+
+# Ignore object files
+*.o
+*.obj
+*.lo
+*.a
+*.lib
+*.la
+*.dll
+*.so
+*.dylib
+
+# Ignore debug and release folders (common for Visual Studio and other IDEs)
+Debug/
+Release/
+x64/
+x86/
+build/
+CMakeFiles/
+CMakeCache.txt
+
+# Ignore IDE and editor files
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.code-workspace
+*.vscode/
+*.idea/
+*.ncb
+*.sdf
+*.mode1v3
+*.mode2v3
+*.pdb
+*.ipch
+
+# Ignore dependency manager files (if using Conan, vcpkg, etc.)
+conanbuildinfo.*
+conan.lock
+vcpkg_installed/
+CMakeUserPresets.json
+
+# Ignore logs, temporary, and cache files
+*.log
+*.tmp
+*.cache
+*.swp
+*.DS_Store
+
+# Ignore Makefile and CMake-generated files
+Makefile
+CMakeFiles/
+CMakeCache.txt
+CMakeScripts/
+Testing/
+CTestTestfile.cmake
+cmake_install.cmake
+
+# Ignore generated documentation
+docs/doxygen/html/
+docs/doxygen/latex/
+
+# Ignore coverage files (if using code coverage tools)
+*.gcda
+*.gcno
+*.gcov
+lcov-report/
+
+# Ignore package manager lock files (optional)
+*.lock
