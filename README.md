@@ -16,7 +16,7 @@ GStreamer Video Recorder is a lightweight application for capturing video using 
 
 mkdir build
 cd build
-cmake .. -G "Visual Studio 17 2022" -DCMAKE_BUILD_TYPE=Release
+cmake .. -G "Visual Studio 17 2022" -DCMAKE_BUILD_TYPE={Release/Debug}
 cmake --build . --config {Release/Debug}
 ```
 
