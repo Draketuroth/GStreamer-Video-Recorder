@@ -9,9 +9,9 @@
 static gboolean
 bus_call(GstBus* bus,
     GstMessage* msg,
-    gpointer    data)
-{
-    GMainLoop* loop = (GMainLoop*)data;
+    gpointer data) {
+
+    GMainLoop* loop = static_cast<GMainLoop*>(data);
 
     switch (GST_MESSAGE_TYPE(msg)) {
 
@@ -43,7 +43,7 @@ bus_call(GstBus* bus,
 // Needed to safely end the recording and avoid corrupt output file
 gboolean stop_recording(gpointer data) {
 
-    GstElement* pipeline = (GstElement*)data;
+    GstElement* pipeline = static_cast<GstElement*>(data);
 
     g_print("Time limit reached. Stopping recording...\n");
     gst_element_send_event(pipeline, gst_event_new_eos());
@@ -55,16 +55,16 @@ int main(int argc, char* argv[]) {
     // @TODO: Handle command line arguments and automize recording source, devices, format etc.
 
     // GStreamer elements
-    GstElement* pipeline;
-    GstElement* source;
-    GstElement* converter;
-    GstElement* encoder;
-    GstElement* muxer;
-    GstElement* sink;
+    GstElement* pipeline = nullptr;
+    GstElement* source = nullptr;
+    GstElement* converter = nullptr;
+    GstElement* encoder = nullptr;
+    GstElement* muxer = nullptr;
+    GstElement* sink = nullptr;
 
     // GStreamer loop components
-    GMainLoop* loop;
-    GstBus* bus;
+    GMainLoop* loop = nullptr;
+    GstBus* bus = nullptr;
     GstStateChangeReturn ret;
     guint bus_watch_id;
 
