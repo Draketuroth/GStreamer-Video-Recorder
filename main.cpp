@@ -6,10 +6,9 @@
 // Implemented using GStreamer 1.26.0
 
 // Message handler for the GStreamer loop
-static gboolean
-bus_call(GstBus* bus,
-    GstMessage* msg,
-    gpointer data) {
+static gboolean bus_call(GstBus* bus,
+                         GstMessage* msg,
+                         gpointer data) {
 
     GMainLoop* loop = static_cast<GMainLoop*>(data);
 
@@ -41,7 +40,7 @@ bus_call(GstBus* bus,
 }
 
 // Needed to safely end the recording and avoid corrupt output file
-gboolean stop_recording(gpointer data) {
+static gboolean stop_recording(gpointer data) {
 
     GstElement* pipeline = static_cast<GstElement*>(data);
 
